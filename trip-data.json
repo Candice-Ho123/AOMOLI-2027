@@ -51,5 +51,10 @@
       "title": "东京返程",
       "items": []
     }
-  ]
+  ],
+  "ledger": {
+    "enable": false,
+    "currency": "CNY",
+    "records": []
+  }
 }
