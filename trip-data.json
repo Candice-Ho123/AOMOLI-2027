@@ -1,7 +1,38 @@
 {
-  "schemaVersion": "1.0.0",
-  "tripTitle": "东京-青森跨年之旅",
-  "tripDateRange": "2025-12-31 ~ 2026-01-05",
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": false,
+      "driving": false,
+      "ledger": false
+    },
+    "language": "zh-CN",
+    "persistence": { "mode": "local" }
+  },
+  "metadata": {
+    "tripId": "tokyo-aomori-newyear-2026",
+    "title": "东京-青森跨年之旅",
+    "language": "zh-CN",
+    "assets": {}
+  },
+  "trip": {
+    "status": "planned",
+    "startDate": "2025-12-31",
+    "endDate": "2026-01-05",
+    "dayCount": 6,
+    "nightCountAway": 5,
+    "countries": ["JP"],
+    "primaryDestinationCountries": ["JP"],
+    "citiesAndAreas": ["东京", "青森", "十和田", "仙台"],
+    "routeSummary": "上海 → 东京上野 → 青森 → 奥入濑溪流 → 八户/仙台 → 东京银座·六本木 → 上海",
+    "groupSize": null
+  },
+  "flightJourneys": [],
   "flights": [
     {
       "direction": "出发",
@@ -20,41 +51,224 @@
       "date": "2026-01-05"
     }
   ],
-  "days": [
+  "accommodations": [
     {
-      "date": "2025-12-31",
-      "title": "抵达东京",
-      "items": []
+      "name": "上野皇冠山精品酒店",
+      "city": "东京",
+      "checkIn": "2025-12-31",
+      "checkOut": "2026-01-01",
+      "note": "位于上野，跨年晚餐后步行回房；朋友同住"
     },
     {
-      "date": "2026-01-01",
-      "title": "东京游玩",
-      "items": []
+      "name": "Relabo Medical Spa&Stay",
+      "city": "青森",
+      "checkIn": "2026-01-01",
+      "checkOut": "2026-01-02",
+      "note": "15点完成入住登记后才可现场抢私汤预约；仅寄存行李不能预约"
     },
     {
-      "date": "2026-01-02",
-      "title": "东京 → 青森",
-      "items": []
+      "name": "奥入濑溪流酒店 Oirase Keiryu Hotel by Hoshino Resorts",
+      "city": "十和田",
+      "checkIn": "2026-01-02",
+      "checkOut": "2026-01-04",
+      "note": "一泊两食含自助早晚餐；入住时记得喝苹果酒"
     },
     {
-      "date": "2026-01-03",
-      "title": "青森/奥入濑溪流",
-      "items": []
-    },
-    {
-      "date": "2026-01-04",
-      "title": "青森 → 东京",
-      "items": []
-    },
-    {
-      "date": "2026-01-05",
-      "title": "东京返程",
-      "items": []
+      "name": "三井花园酒店（六本木）",
+      "city": "东京",
+      "checkIn": "2026-01-04",
+      "checkOut": "2026-01-05",
+      "note": "1.5 退房后大件行李寄存前台，取行李后步行至君悦酒店门口搭乘利木津大巴"
     }
   ],
-  "ledger": {
-    "enable": false,
-    "currency": "CNY",
-    "records": []
+  "groundTransport": {
+    "rentalCar": null,
+    "rentalChecklist": [],
+    "drivingNotes": [],
+    "drivingReferenceLinks": [],
+    "plannedRoadLegs": [],
+    "publicTransitAndRail": []
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2025-12-31",
+      "title": "抵达东京·上野跨年",
+      "schedule": [
+        { "time": "12:00", "category": "meal", "title": "上野午餐", "location": "上野", "note": "备选：AFURI 上野店柚子拉面 / 柠檬与牛 上野店" },
+        { "time": "13:30", "category": "hotel", "title": "回酒店办理入住", "location": "上野皇冠山精品酒店", "note": "放行李，轻装出门" },
+        { "time": "15:00", "endTime": "16:30", "category": "activity", "title": "album 上野店鱼子酱头发护理", "location": "album 上野店", "note": "约90分钟，建议提前预约；做完可在阿美横丁逛一会" },
+        { "time": "18:30", "endTime": "21:30", "category": "meal", "title": "跨年晚餐（三选一）", "location": "上野站步行5分钟内", "note": "①鳥よい Toriyoi ②魚河岸 魚○本店 ③あばれ鮮魚。务必提前电话预约，确认12/31营业+手压酒头三宝乐黑标生啤" },
+        { "time": "20:00", "category": "note", "title": "餐后可选：Asahi Sky Room", "location": "浅草 アサヒグループ本社ビル22F", "note": "只喝酒看夜景，营业至22:00，年末可能临时变更，出行前确认" },
+        { "time": "21:30", "category": "note", "title": "晚餐结束步行回酒店", "location": "上野", "note": "保障次日08:08新干线出发" }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-01-01",
+      "title": "东京上野 → 青森",
+      "schedule": [
+        { "time": "07:10", "category": "note", "title": "起床退房", "location": "上野皇冠山精品酒店", "note": "大堂20层，行李全部随身带走" },
+        { "time": "07:28", "category": "transport", "title": "酒店出发", "location": "上野", "note": "元旦车站人多，预留充足时间" },
+        { "time": "07:38", "category": "transport", "title": "抵达JR上野站新干线中央改札", "location": "JR上野站" },
+        { "time": "08:08", "endTime": "11:03", "category": "transport", "title": "JR隼号 上野 → 青森", "location": "JR上野站", "note": "车程2h55m；持JR东日本通票提前划指定席，元旦自由席极拥挤" },
+        { "time": "11:20", "category": "note", "title": "行李寄存", "location": "青森站储物柜 / Relabo前台", "note": "寄存行李≠入住，不能预约私汤" },
+        { "time": "11:40", "endTime": "12:50", "category": "meal", "title": "A-FACTORY 午餐 + 苹果gelato", "location": "青森県青森市柳川1丁目4-2", "note": "元旦稳定营业，可采购苹果周边" },
+        { "time": "13:00", "endTime": "13:40", "category": "sightseeing", "title": "广田神社 新年初诣", "location": "青森県青森市柳川2丁目7-1", "note": "A-FACTORY步行8分钟，人流适中" },
+        { "time": "13:50", "endTime": "14:30", "category": "shopping", "title": "青森站前苹果商圈", "location": "青森県青森市新町1丁目一带", "note": "选购苹果、果酱、点心" },
+        { "time": "14:40", "category": "sightseeing", "title": "Aomori Wandō 青森湾海边步道", "location": "青森県青森市安方1丁目", "note": "临海散步，冬日海景" },
+        { "time": "15:00", "category": "hotel", "title": "Relabo 办理入住 + 抢私汤预约", "location": "Relabo Medical Spa&Stay", "note": "完成15点入住登记后才可现场抢预约" },
+        { "time": "15:40", "endTime": "17:30", "category": "activity", "title": "酒店私汤体验", "location": "Relabo Medical Spa&Stay" },
+        { "time": "18:00", "endTime": "20:30", "category": "meal", "title": "晚餐三选一", "location": "青森站前", "note": "主选：焼肉 南大門 新町店 / 三代目網元 魚鮮水産 / 牛角 青森店；河庄、Daijun 元旦休业风险高，仅碰运气" }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-01-02",
+      "title": "青森 → 奥入濑溪流酒店",
+      "schedule": [
+        { "time": "08:00", "endTime": "08:40", "category": "meal", "title": "酒店早餐", "location": "Relabo Medical Spa&Stay" },
+        { "time": "08:40", "endTime": "09:00", "category": "note", "title": "收拾行李退房", "location": "Relabo Medical Spa&Stay", "note": "10点前退房，大件行李寄存前台" },
+        { "time": "09:00", "endTime": "09:50", "category": "sightseeing", "title": "ASPAM 青森县观光物产馆", "location": "青森県青森市安方1-1-40", "note": "9:00-18:00，13楼付费观景台俯瞰青森港" },
+        { "time": "09:50", "endTime": "10:15", "category": "shopping", "title": "Aomori Wando 苹果杂货文创", "location": "青森県青森市安方2丁目1-15", "note": "ASPAM步行3分钟" },
+        { "time": "10:15", "endTime": "10:40", "category": "meal", "title": "COFFEEMAN good 咖啡", "location": "青森県青森市堤町1-7-12", "note": "必点苹果拿铁" },
+        { "time": "10:40", "endTime": "11:30", "category": "note", "title": "河庄寿司门口等候", "location": "青森県青森市堤町2-12-5", "note": "规避排队" },
+        { "time": "11:30", "endTime": "13:00", "category": "meal", "title": "河庄寿司午市 Omakase", "location": "青森県青森市堤町2-12-5", "note": "12贯 4180日元，支持walk-in；元旦休业风险已过" },
+        { "time": "13:00", "endTime": "14:20", "category": "note", "title": "缓冲时间", "location": "青森站前", "note": "可补逛苹果商圈 / A-FACTORY 补货，不要走远" },
+        { "time": "14:20", "category": "note", "title": "返回 Relabo 取回大件行李", "location": "Relabo Medical Spa&Stay", "note": "时间红线，不可延后" },
+        { "time": "14:40", "category": "transport", "title": "步行至青森站西口广场候车", "location": "青森站西口", "note": "冬季注意防寒" },
+        { "time": "15:00", "endTime": "17:30", "category": "transport", "title": "星野接驳巴士 → 奥入濑溪流酒店", "location": "青森站西口", "note": "单程4000日元，必须提前2天官网/邮件预约；冬季仅15:00一班，车程约2h30m；水波号12-3月停运" },
+        { "time": "17:30", "endTime": "18:00", "category": "hotel", "title": "抵达酒店办理入住", "location": "奥入濑溪流酒店", "note": "一泊两食已含；入住时喝苹果酒" },
+        { "time": "18:30", "endTime": "19:30", "category": "meal", "title": "酒店自助晚餐", "location": "奥入濑溪流酒店" },
+        { "time": "19:30", "category": "activity", "title": "二选一：冰瀑点灯夜间小巴 / 冰瀑露天温泉", "location": "奥入濑溪流酒店", "note": "夜间小巴免费需预约，大雪天气取消" },
+        { "time": "21:30", "category": "note", "title": "返回客房休息", "location": "奥入濑溪流酒店" }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-01-03",
+      "title": "奥入濑溪流·蔦沼雪鞋徒步",
+      "schedule": [
+        { "time": "08:30", "endTime": "09:30", "category": "meal", "title": "自助早餐 青森苹果厨房", "location": "奥入濑溪流酒店", "note": "7:00-10:00，9:30最后入场取餐" },
+        { "time": "09:30", "endTime": "13:40", "category": "note", "title": "上午自由休闲", "location": "奥入濑溪流酒店", "note": "可逛商店、溪流图书馆、大堂暖炉；积雪厚不建议自行进山" },
+        { "time": "13:50", "endTime": "16:00", "category": "activity", "title": "蔦沼雪鞋徒步", "location": "西馆2楼 溪流-BASE 集合", "note": "4950日元/人，需预约，含雪鞋雪靴向导；2小时10分，7岁以上，定员8人；只有下午一场" },
+        { "time": "16:00", "endTime": "16:30", "category": "note", "title": "返回换干爽衣物", "location": "奥入濑溪流酒店" },
+        { "time": "16:30", "endTime": "18:00", "category": "activity", "title": "冰瀑之湯 冬季限定露天温泉", "location": "奥入濑溪流酒店", "note": "6:00-11:30、14:30-24:00，无需预约" },
+        { "time": "18:00", "endTime": "20:00", "category": "meal", "title": "晚餐二选一", "location": "奥入濑溪流酒店", "note": "A：Sonore 法餐 21780日元/人，须前一天19:00前预约，当天取消收100%，不可穿浴衣拖鞋；B：自助餐厅无需预约" },
+        { "time": "20:00", "category": "activity", "title": "二选一：冰瀑点灯夜间小巴 / 回房休息", "location": "奥入濑溪流酒店", "note": "夜间小巴免费需预约，大雪取消" }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-01-04",
+      "title": "奥入濑 → 八户 → 仙台 → 东京银座·六本木",
+      "schedule": [
+        { "time": "08:30", "endTime": "09:30", "category": "meal", "title": "酒店自助早餐", "location": "奥入濑溪流酒店", "note": "7:00-10:00，9:30停止取餐" },
+        { "time": "09:30", "endTime": "10:50", "category": "note", "title": "收拾行李办理退房", "location": "奥入濑溪流酒店", "note": "全部行李带走" },
+        { "time": "11:00", "endTime": "12:10", "category": "transport", "title": "酒店免费接驳巴士 → JR八户站", "location": "奥入濑溪流酒店", "note": "约70分钟；仅11:00一班，必须提前预约；冬季下雪会晚点" },
+        { "time": "12:22", "endTime": "13:32", "category": "transport", "title": "Hayabusa 隼号 八户 → 仙台", "location": "JR八户站", "note": "约1h10m，指定席约9200日元；雪天晚点备选12:48（13:58到），不推荐13:14" },
+        { "time": "13:40", "endTime": "15:00", "category": "meal", "title": "仙台站内牛舌午餐", "location": "JR仙台駅3F 牛たん通り", "note": "首选伊達の牛たん本舗，备选たんや善治郎；不可预约，饭点排队；先寄存行李再吃饭，不要出站" },
+        { "time": "15:20", "endTime": "17:30", "category": "transport", "title": "Hayabusa 隼号 仙台 → 东京", "location": "JR仙台站", "note": "约2h10m，指定席约11600日元；中转预留20分钟取行李+走站台；备选14:46/15:48，16:14有黑标酒吧入场风险" },
+        { "time": "17:50", "category": "transport", "title": "地铁日比谷线 → 六本木", "location": "东京站" },
+        { "time": "18:00", "category": "hotel", "title": "酒店入住放行李", "location": "三井花园酒店（六本木）" },
+        { "time": "18:30", "category": "transport", "title": "地铁前往银座", "location": "六本木站", "note": "日比谷线直达，15-20分钟" },
+        { "time": "18:50", "endTime": "19:30", "category": "meal", "title": "银座晚餐（按出餐速度选）", "location": "银座5丁目一带", "note": "最快：はなまるうどん 銀座ファイブ店；伊勢廣 銀座五丁目店；香家 銀座ファイブ店；京AFURI 東急プラザ銀座11F（饭点排队，时间紧不选）" },
+        { "time": "19:35", "endTime": "20:30", "category": "activity", "title": "サッポロ生ビール黒ラベル THE BAR", "location": "東京都中央区銀座5-8-1 GINZA PLACE B1F", "note": "只酒水+小食；工作日L.O.21:30，周末节假日L.O.20:30" },
+        { "time": "20:30", "category": "transport", "title": "地铁返回六本木", "location": "银座站" },
+        { "time": "21:00", "category": "sightseeing", "title": "六本木之丘看夜景", "location": "六本木之丘", "note": "之后回酒店休息" }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-01-05",
+      "title": "东京 → 上海返程",
+      "schedule": [
+        { "time": "09:20", "category": "hotel", "title": "退房并寄存大件行李", "location": "三井花园酒店（六本木）", "note": "拿好寄存小票，贵重物品随身，不要拖箱子" },
+        { "time": "09:30", "endTime": "11:20", "category": "sightseeing", "title": "麻布台之丘闲逛打卡", "location": "麻布台之丘", "note": "步行8-12分钟，拍东京塔观景，浅逛即可" },
+        { "time": "11:30", "endTime": "12:50", "category": "meal", "title": "鮨麻布 Sushi Azabu 午市 Omakase", "location": "麻布台ヒルズタワープラザ3F", "note": "TableCheck 预约11:30板前位，备注 Lunch omakase / No alcohol / 只要茶水；午市约4800日元，预留80分钟" },
+        { "time": "13:00", "endTime": "15:20", "category": "shopping", "title": "六本木之丘主力购物", "location": "六本木之丘", "note": "Le Labo Hillside 2F 预留35-45分钟；Iprimo、agete/4℃、ABC-MART" },
+        { "time": "15:20", "endTime": "15:35", "category": "hotel", "title": "返回酒店取寄存行李", "location": "三井花园酒店（六本木）", "note": "凭小票取回全部行李箱" },
+        { "time": "15:35", "category": "transport", "title": "步行至君悦酒店门口等利木津大巴", "location": "君悦酒店门口", "note": "建议选16点之后发车班次，不要卡点；宁可多等不要狂奔" },
+        { "time": "—", "category": "flight", "title": "9C6218 东京成田T3 → 上海", "location": "东京成田T3", "note": "返程航班" }
+      ]
+    }
+  ],
+  "places": [
+    { "name": "A-FACTORY", "type": "shopping", "address": "青森県青森市柳川1丁目4-2", "note": "临海文创综合体，苹果gelato" },
+    { "name": "广田神社", "type": "sightseeing", "address": "青森県青森市柳川2丁目7-1", "note": "元旦初诣" },
+    { "name": "Aomori Wandō 青森湾步道", "type": "sightseeing", "address": "青森県青森市安方1丁目", "note": "临海散步" },
+    { "name": "ASPAM 青森县观光物产馆", "type": "sightseeing", "address": "青森県青森市安方1-1-40", "note": "13楼观景台" },
+    { "name": "蔦沼", "type": "sightseeing", "address": "青森県十和田市奥瀬", "note": "雪鞋徒步目的地" },
+    { "name": "GINZA PLACE", "type": "shopping", "address": "東京都中央区銀座5-8-1", "note": "B1F サッポロ黒ラベル THE BAR" },
+    { "name": "麻布台之丘", "type": "shopping", "address": "東京都港区麻布台1丁目", "note": "タワープラザ3F 鮨麻布" },
+    { "name": "六本木之丘", "type": "shopping", "address": "東京都港区六本木6丁目", "note": "Le Labo、夜景" }
+  ],
+  "restaurants": [
+    { "name": "AFURI 上野店", "city": "东京", "type": "拉面", "note": "柚子拉面" },
+    { "name": "鳥よい Toriyoi 上野御徒町店", "city": "东京", "type": "烧鸟居酒屋", "address": "東京都台東区上野4-6-6", "note": "跨年晚餐首选，有三宝乐黑标生啤，营业到凌晨5点" },
+    { "name": "魚河岸 魚○本店", "city": "东京", "type": "海鲜居酒屋", "address": "東京都台東区上野7-2 ファンデス上野1F", "note": "24小时，预约确认黑标手压生啤" },
+    { "name": "あばれ鮮魚 上野店", "city": "东京", "type": "海鲜居酒屋", "address": "東京都台東区上野6-7-4", "note": "半隔间BOX座位" },
+    { "name": "Asahi Sky Room", "city": "东京", "type": "酒吧", "address": "東京都墨田区吾妻橋1-23-1 アサヒグループ本社ビル22F", "note": "只酒水小食，营业至22:00" },
+    { "name": "焼肉 南大門 新町店", "city": "青森", "type": "烧肉", "address": "青森県青森市新町1-2-17", "note": "1.1晚餐首选，17:00-22:30" },
+    { "name": "三代目網元 魚鮮水産 青森駅前新町店", "city": "青森", "type": "海鲜居酒屋", "address": "青森県青森市新町1-1-10", "note": "节假日营业，17:00开门" },
+    { "name": "牛角 青森店", "city": "青森", "type": "烧肉", "address": "青森県青森市本町2-4-10", "note": "全年无休兜底" },
+    { "name": "河庄", "city": "青森", "type": "寿司Omakase", "address": "青森県青森市堤町2-12-5", "note": "12贯4180日元；1.1休业风险高，安排1.2午市" },
+    { "name": "伊達の牛たん本舗 仙台駅3階", "city": "仙台", "type": "牛舌", "address": "JR仙台駅3F 牛たん通り", "note": "站内，不可预约" },
+    { "name": "たんや善治郎 牛たん通り店", "city": "仙台", "type": "牛舌", "address": "JR仙台駅3F 牛たん通り", "note": "备选，真中たん定食" },
+    { "name": "はなまるうどん 銀座ファイブ店", "city": "东京", "type": "乌冬", "address": "銀座5丁目B1", "note": "出餐最快，时间紧首选" },
+    { "name": "伊勢廣 銀座五丁目店", "city": "东京", "type": "烧鸟", "address": "銀座5丁目地下", "note": "烧鸟丼、串烧" },
+    { "name": "京AFURI SAKE & RAMEN", "city": "东京", "type": "拉面", "address": "東急プラザ銀座11F", "note": "阿夫利合作店，饭点排队，时间宽裕再选" },
+    { "name": "鮨麻布 Sushi Azabu", "city": "东京", "type": "寿司Omakase", "address": "麻布台ヒルズタワープラザ3F", "note": "午市约4800日元，TableCheck预约，备注No alcohol" },
+    { "name": "サッポロ生ビール黒ラベル THE BAR", "city": "东京", "type": "酒吧", "address": "東京都中央区銀座5-8-1 GINZA PLACE B1F", "note": "手压生啤，工作日L.O.21:30" }
+  ],
+  "bookingsAndTickets": [],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
+    "items": []
+  },
+  "preTrip": {
+    "packingItems": [
+      "防寒外套、帽子、手套（蔦沼雪鞋徒步用）",
+      "保暖内衣、防水雪地靴",
+      "JR东日本通票（提前划指定席）"
+    ],
+    "preparationsExplicitlyMentioned": [
+      "12/31 跨年晚餐电话预约，确认营业+手压酒头三宝乐黑标生啤",
+      "album 上野店头发护理预约",
+      "奥入濑溪流酒店接驳巴士提前2天官网/邮件预约",
+      "八户站接驳巴士提前预约",
+      "蔦沼雪鞋徒步预约（定员8人）",
+      "Sonore 法餐若去，前一天19:00前预约",
+      "鮨麻布午市提前7-14天 TableCheck 预约11:30席位"
+    ],
+    "missingNote": "利木津大巴班次需出行前核对；JR新年班次可能微调"
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": ["flight", "note", "rest"],
+      "selfNavigationTypes": ["drive", "return", "transfer", "check-in", "check-out", "restaurant", "attraction", "walk", "hike"]
+    },
+    "navigationPlaces": []
+  },
+  "issuesAndUncertainties": [
+    "1.1 元旦青森多数餐厅可能缩短营业或休业，出门前用 Google 地图确认实时状态",
+    "河庄、Daijun 元旦休业概率高，只作碰运气备选",
+    "Asahi Sky Room 年末可能临时变更营业时间",
+    "奥入濑→八户接驳巴士仅11:00一班，下雪会晚点，新干线务必指定席",
+    "仙台中转全部活动锁站内，不要出站",
+    "若坐15:48仙台发车，银座晚餐优先花丸乌冬/伊势广，不选京AFURI"
+  ],
+  "map": {
+    "schemaVersion": "1.0-lite",
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+    "places": [],
+    "routes": [],
+    "dailyRoutes": []
   }
 }
